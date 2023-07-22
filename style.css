@@ -1,0 +1,261 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "VT323", monospace;
+  letter-spacing: 2px;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 200px;
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+header .brand {
+  color: #e0d9f6;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+header .navigation {
+  position: relative;
+}
+
+header .navigation .navigation-items a {
+  position: relative;
+  font-size: 1.2rem;
+  color: #e0d9f6;
+  text-decoration: none;
+  margin-left: 2rem;
+  transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background: #e0d9f6;
+  transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover::before {
+  width: 100%;
+}
+
+/* SECTION */
+section {
+  padding: 100px 200px;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #586ae2;
+}
+
+.home::before {
+  z-index: 777;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(88, 106, 226, 0.8);
+}
+
+/* background image */
+.home img {
+  z-index: 000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.background-image {
+  position: absolute;
+  width: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+
+.background-image.active {
+  clip-path: circle(150% at 0 50%);
+  transition: 1.5s ease;
+  transition-property: clip-path;
+}
+
+/* text content */
+.home .content {
+  display: none;
+  z-index: 888;
+  color: #e0d9f6;
+  width: 70%;
+  margin-top: 50px;
+}
+
+.home .content.active {
+  display: block;
+}
+
+.home .content h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+
+.home .content p {
+  margin-bottom: 40px;
+}
+
+/* icons */
+.home .media-icons {
+  display: flex;
+  flex-direction: column;
+  z-index: 888;
+  position: absolute;
+  right: 30px;
+}
+
+.home .media-icons a {
+  color: #e0d9f6;
+  font-size: 1.5rem;
+  transition: 0.3s ease;
+}
+
+.home .media-icons a:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.home .media-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* dots slide navigation */
+.dot-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 888;
+  position: relative;
+  transform: translateY(80px);
+  margin-bottom: 12px;
+}
+
+.dot-navigation .dot-navigation-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  background: #e0d9f6;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.dot-navigation .dot-navigation-btn.active {
+  background: #586ae2;
+}
+
+.dot-navigation .dot-navigation-btn:not(:last-child) {
+  margin-right: 20px;
+}
+
+.dot-navigation .dot-navigation-btn:hover {
+  transform: scale(1.2);
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 1040px) {
+  header {
+    padding: 12px 20px;
+  }
+
+  header .navigation {
+    display: none;
+  }
+  header .navigation.open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(88, 106, 226, 0.5);
+  }
+
+  header .navigation.open .navigation-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    max-width: 300px;
+    margin: 20px;
+    padding: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 25px rgb(1, 1, 1, 0.2);
+    background: #e0d9f6;
+  }
+
+  header .navigation .navigation-items a {
+    margin: 20px;
+    color: #586ae2;
+  }
+  header .navigation .navigation-items a::before {
+    height: 1px;
+    background: #586ae2;
+  }
+
+  .menu-btn {
+    background: url(/menu.svg) no-repeat;
+    background-size: 30px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .menu-btn.open {
+    z-index: 999;
+    background: url(/close.svg) no-repeat;
+    background-size: 30px;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+
+  section {
+    padding: 100px 20px;
+  }
+
+  .home .media-icons {
+    right: 15px;
+  }
+}
