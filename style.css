@@ -83,7 +83,7 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   background: rgba(88, 106, 226, 0.8);
 }
 
@@ -115,23 +115,36 @@ section {
   display: none;
   z-index: 888;
   color: #e0d9f6;
-  width: 70%;
-  margin-top: 50px;
+  width: 80%;
+  margin-top: 2rem;
 }
 
 .home .content.active {
   display: block;
 }
 
-.home .content h1 {
-  font-size: 3rem;
+.home .content h2 {
+  font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 3px;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
+}
+
+.home .content h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1.25rem;
 }
 
 .home .content p {
-  margin-bottom: 40px;
+  margin-bottom: 1.25rem;
+  font-size: 1.2rem;
+}
+
+.home .content a {
+  text-decoration: none;
+  color: #e0d9f6;
 }
 
 /* icons */
@@ -150,7 +163,7 @@ section {
 }
 
 .home .media-icons a:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .home .media-icons a:hover {
@@ -165,7 +178,7 @@ section {
   z-index: 888;
   position: relative;
   transform: translateY(80px);
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
 }
 
 .dot-navigation .dot-navigation-btn {
@@ -183,7 +196,7 @@ section {
 }
 
 .dot-navigation .dot-navigation-btn:not(:last-child) {
-  margin-right: 20px;
+  margin-right: 1.25rem;
 }
 
 .dot-navigation .dot-navigation-btn:hover {
@@ -193,7 +206,7 @@ section {
 /* --- MEDIA QUERIES --- */
 @media (max-width: 1040px) {
   header {
-    padding: 12px 20px;
+    padding: 0.75rem 1.25rem;
   }
 
   header .navigation {
@@ -215,17 +228,17 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
-    max-width: 300px;
-    margin: 20px;
-    padding: 40px;
+    width: 18.75rem;
+    max-width: 18.75rem;
+    margin: 1.25rem;
+    padding: 2.5rem;
     border-radius: 50%;
     box-shadow: 0 5px 25px rgb(1, 1, 1, 0.2);
     background: #e0d9f6;
   }
 
   header .navigation .navigation-items a {
-    margin: 20px;
+    margin: 1.25rem;
     color: #586ae2;
   }
   header .navigation .navigation-items a::before {
@@ -252,7 +265,17 @@ section {
   }
 
   section {
-    padding: 100px 20px;
+    padding: 6.25rem 2rem;
+  }
+
+  .home .content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .home .content p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
   }
 
   .home .media-icons {
