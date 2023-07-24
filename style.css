@@ -43,7 +43,6 @@ header .navigation .navigation-items a {
   color: #e0d9f6;
   text-decoration: none;
   margin-left: 2rem;
-  transition: 0.3s ease;
 }
 
 header .navigation .navigation-items a::before {
